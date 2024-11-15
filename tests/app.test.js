@@ -57,7 +57,7 @@ describe('Controller function test', () => {
 });
 describe('Game API Endpoints', () => {
   it('should retrieve all games', async () => {
-    const res = await request(app).get('/games');
+    const res = await request(server).get('/games');
 
     expect(res.statusCode).toEqual(200);
     expect(res.body).toEqual({
@@ -86,7 +86,7 @@ describe('Game API Endpoints', () => {
   });
 
   it('should retrieve an game by ID', async () => {
-    const res = await request(app).get('/games/details/1');
+    const res = await request(server).get('/games/details/1');
 
     expect(res.statusCode).toEqual(200);
     expect(res.body).toEqual({
